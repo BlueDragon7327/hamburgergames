@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aesthetic Games</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #2F6356;
+            font-family: 'Montserrat', Arial, sans-serif;
+            color: #ff8f0f;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        header {
+            width: 100%;
+            padding: 50px 0;
+            background: url('night-sky.jpg') no-repeat center center/cover;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 6em;
+            color: #ff8f0f;
+            text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.7);
+        }
+
+        .search-bar {
+            margin-bottom: 40px;
+            width: 80%;
+            max-width: 600px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 10px;
+            font-size: 1.2em;
+            border: 2px solid #ff8f0f;
+            border-radius: 25px;
+            outline: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .search-bar input::placeholder {
+            color: #ff8f0f;
+        }
+
+        main {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        section {
+            margin: 60px 0;
+            width: 80%;
+            max-width: 1200px;
+        }
+
+        section h2 {
+            font-size: 3em;
+            color: #ff8f0f;
+            margin-bottom: 30px;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .game-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .game {
+            margin: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .game:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .game a {
+            text-decoration: none;
+            color: #ff8f0f;
+        }
+
+        .game img {
+            width: 250px;
+            height: 250px;
+            border-radius: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .game img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .game span {
+            display: block;
+            margin-top: 15px;
+            font-size: 1.8em;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .game a:hover span {
+            color: #ffa93b;
+        }
+
+        .section-background {
+            background-color: rgba(47, 99, 86, 0.8); /* Slightly transparent background for sections */
+            border-radius: 15px;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Games</h1>
+    </header>
+
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search for games or sections...">
+    </div>
+
+    <main>
+        <!-- Recently Added Section -->
+        <section class="section-background" id="recentlyAddedSection">
+            <h2>Recently Added</h2>
+            <div class="game-container" id="recentlyAdded">
+                <!-- No games here anymore, they are now in Shooting Games -->
+            </div>
+        </section>
+
+        <!-- Popular Games Section -->
+        <section class="section-background" id="popularGamesSection">
+            <h2>Popular Games</h2>
+            <div class="game-container" id="popularGames">
+                <!-- Add more games here -->
+            </div>
+        </section>
+
+        <!-- .IO Games Section -->
+        <section class="section-background" id="ioGamesSection">
+            <h2>.IO Games</h2>
+            <div class="game-container" id="ioGames">
+                <!-- Add more games here -->
+            </div>
+        </section>
+
+        <!-- Shooting Games Section -->
+        <section class="section-background" id="shootingGamesSection">
+            <h2>Shooting Games</h2>
+            <div class="game-container" id="shootingGames">
+                <div class="game">
+                    <a href="https://bluedragon7327.github.io/hamburgergames/kourio" target="_blank">
+                        <img src="https://raw.githubusercontent.com/BlueDragon7327/hamburgergames/main/Images/kourio.png" alt="Kour.io">
+                        <span>Kour.io</span>
+                    </a>
+                </div>
+                <div class="game">
+                    <a href="https://bluedragon7327.github.io/hamburgergames/1v1lol" target="_blank">
+                        <img src="https://raw.githubusercontent.com/BlueDragon7327/hamburgergames/main/Images/1v1lol.png" alt="1v1.LOL">
+                        <span>1v1.LOL</span>
+                    </a>
+                </div>
+                <div class="game">
+                    <a href="https://bluedragon7327.github.io/hamburgergames/krunker" target="_blank">
+                        <img src="https://raw.githubusercontent.com/BlueDragon7327/hamburgergames/main/Images/krunker.png" alt="Krunker">
+                        <span>Krunker</span>
+                    </a>
+                </div>
+                <div class="game">
+                    <a href="https://bluedragon7327.github.io/hamburgergames/subwayclash2" target="_blank">
+                        <img src="https://raw.githubusercontent.com/BlueDragon7327/hamburgergames/main/Images/subwayclash2.png" alt="Subway Clash 2">
+                        <span>Subway Clash 2</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add more sections as needed -->
+    </main>
+
+    <script>
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const searchValue = this.value.toLowerCase();
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                const sectionTitle = section.querySelector('h2').textContent.toLowerCase();
+                let sectionMatches = sectionTitle.includes(searchValue);
+                const games = section.querySelectorAll('.game');
+                games.forEach(game => {
+                    const gameTitle = game.querySelector('span').textContent.toLowerCase();
+                    const gameLink = game.querySelector('a').href.toLowerCase();
+                    const gameMatches = gameTitle.includes(searchValue) || gameLink.includes(searchValue);
+                    game.style.display = gameMatches ? 'block' : 'none';
+                    if (gameMatches) sectionMatches = true;
+                });
+                section.style.display = sectionMatches ? 'block' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>
