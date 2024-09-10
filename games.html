@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger Games</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e1e;
+            font-family: 'Montserrat', Arial, sans-serif;
+            color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        header {
+            width: 100%;
+            padding: 50px 0;
+            background: url('https://source.unsplash.com/random/1920x1080?night') no-repeat center center/cover;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 4em;
+            color: #f5f5f5;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        .search-bar {
+            margin-bottom: 40px;
+            width: 80%;
+            max-width: 600px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 12px 20px;
+            font-size: 1.1em;
+            border: 2px solid #ff8f0f;
+            border-radius: 50px;
+            outline: none;
+            background-color: #333;
+            color: #f5f5f5;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: border-color 0.3s ease;
+        }
+
+        .search-bar input::placeholder {
+            color: #ccc;
+        }
+
+        .search-bar input:focus {
+            border-color: #ffa93b;
+        }
+
+        main {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        section {
+            margin: 60px 20px;
+            width: 80%;
+            max-width: 1200px;
+            background: rgba(47, 99, 86, 0.9);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            color: #ff8f0f;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .game-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .game {
+            background: #2e2e2e;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 220px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .game:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .game a {
+            text-decoration: none;
+            color: #f5f5f5;
+        }
+
+        .game img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .game img:hover {
+            transform: scale(1.03);
+        }
+
+        .game span {
+            display: block;
+            margin-top: 10px;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #ff8f0f;
+            transition: color 0.3s ease;
+        }
+
+        .game a:hover span {
+            color: #ffa93b;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Games</h1>
+    </header>
+
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search for games or sections...">
+    </div>
+
+    <main>
+        <!-- Recently Added Section -->
+        <section id="recentlyAddedSection">
+            <h2>Recently Added</h2>
+            <div class="game-container" id="recentlyAdded">
+                <!-- No games here anymore, they are now in Shooting Games -->
+            </div>
+        </section>
+
+        <!-- Popular Games Section -->
+        <section id="popularGamesSection">
+            <h2>Popular Games</h2>
+            <div class="game-container" id="popularGames">
+                <div class="game">
+                    <a href="https://bluedragon7327.github.io/hamburgergames/monkeymartt" target="_blank">
+                        <img src="https://raw.githubusercontent.com/BlueDragon7327/hamburgergames/main/Images/monkeymart.png" alt="Monkey Mart">
+                        <span>Monkey Mart</span>
+                    </a>
+                </div>
+                <div class="game">
+                    <a href="https://bluedragon7327.github.io/hamburgergames/slope" target="_blank">
+                        <img src="https://raw.githubusercontent.com/BlueDragon7327/hamburgergames/main/Images/slope.png" alt="Slope">
+                        <span>Slope</span>
+                    </a>
+                </div>
+                <div class="game">
+                    <a href="https://bluedragon7327.github.io/hamburgergames/retrobowl" target="_blank">
+                        <img src="https://raw.githubusercontent.com/BlueDragon7327/hamburgergames/main/Images/retrobowl.png" alt="Retro Bowl">
+                        <span>Retro Bowl</span>
+                    </a>
+                </div>
+                <div class="game">
+                    <a href="https://bluedragon7327.github.io/hamburgergames/polytrack" target="_blank">
+                        <img src="https://raw.githubusercontent.com/BlueDragon7327/hamburgergames/main/Images/polytrack.png" alt="PolyTrack">
+                        <span>PolyTrack</span>
+                    </a>
+                </div>
+                <div class="game">
+                    <a href="https://example.com/eugenes-life" target="_blank">
+                        <img src="https://example.com/images/eugenes-life.png" alt="Eugene's Life">
+                        <span>Eugene's Life</span>
+                    </a>
+                </div>
+                <div class="game">
+                    <a href="https://example.com/drift-boss" target="_blank">
+                        <img src="https://example.com/images/drift-boss.png" alt="Drift Boss">
+                        <span>Drift Boss</span>
+                    </a>
+                </div>
+                <div class="game">
+                    <a href="https://example.com/geometry-dash" target="_blank">
+                        <img src="https://example.com/images/geometry-dash.png" alt="Geometry Dash">
+                        <span>Geometry Dash</span>
+                    </a>
+                </div>
+                <div class="game">
+                    <a href="https://example.com/tag" target="_blank">
+                        <img src="https://example.com/images/tag.png" alt="Tag">
+                        <span>Tag</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- .IO Games Section -->
+        <section id="ioGamesSection">
+            <h2>.IO Games</h2>
+            <div class="game-container" id="ioGames">
+                <!-- Add more games here -->
+            </div>
+        </section>
+
+        <!-- Shooting Games Section -->
+        <section id="shootingGamesSection">
+            <h2>Shooting Games</h2>
+            <div class="game-container" id="shootingGames">
+                <div class="game">
+                    <a href="https://bluedragon7327.github.io/hamburgergames/kourio" target="_blank">
+                        <img src="https://raw.githubusercontent.com/BlueDragon7327/hamburgergames/main/Images/kourio.png" alt="Kour.io">
+                        <span>Kour.io</span>
+                    </a>
+                </div>
+                <div class="game">
+                    <a href="https://bluedragon7327.github.io/hamburgergames/1v1lol" target="_blank">
+                        <img src="https://raw.githubusercontent.com/BlueDragon7327/hamburgergames/main/Images/1v1lol.png" alt="1v1 LOL">
+                        <span>1v1 LOL</span>
+                    </a>
+                </div>
+                <!-- Additional shooting games here -->
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            let sectionVisible = false;
+            
+            document.querySelectorAll('section').forEach(section => {
+                let sectionHasVisibleGame = false;
+                
+                section.querySelectorAll('.game').forEach(game => {
+                    const gameName = game.querySelector('span').textContent.toLowerCase();
+                    const gameLink = game.querySelector('a').href.toLowerCase();
+                    
+                    if (gameName.includes(searchTerm) || gameLink.includes(searchTerm)) {
+                        game.style.display = 'block';
+                        sectionHasVisibleGame = true;
+                    } else {
+                        game.style.display = 'none';
+                    }
+                });
+                
+                if (sectionHasVisibleGame) {
+                    section.style.display = 'block';
+                    sectionVisible = true;
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+            
+            // Handle the case where no sections are visible
+            if (!sectionVisible) {
+                document.querySelector('main').innerHTML = '<p>No results found.</p>';
+            }
+        });
+    </script>
+</body>
+</html>
