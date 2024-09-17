@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Sigma Cringe Fest</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            background: #000;
+            color: #00ff00;
+            position: relative;
+        }
+        .video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        #checkButton {
+            padding: 20px 40px;
+            font-size: 2.5em;
+            cursor: pointer;
+            background: #ff00ff;
+            border: 5px solid #ff0000;
+            border-radius: 20px;
+            color: #ffffff;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.8);
+            transition: transform 0.5s, background 0.5s, box-shadow 0.5s;
+            position: relative;
+            z-index: 2;
+        }
+        #checkButton:hover {
+            transform: scale(1.2) rotate(15deg);
+            background: #00ffff;
+            box-shadow: 0 0 40px rgba(0, 255, 255, 0.8);
+        }
+        #response {
+            font-size: 2em;
+            margin-top: 40px;
+            transition: opacity 1s;
+            font-family: 'Arial Black', Gadget, sans-serif;
+        }
+        .hidden {
+            display: none;
+        }
+        .cool-effects {
+            margin-top: 40px;
+            font-size: 3em;
+            color: #ff0000;
+            text-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000, 0 0 60px #ff0000;
+        }
+        .cool-effects span {
+            display: block;
+            transition: transform 1s, color 1s, font-size 1s;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+        }
+        @keyframes colorChange {
+            0% { color: #ff0000; }
+            25% { color: #00ff00; }
+            50% { color: #0000ff; }
+            75% { color: #ffff00; }
+            100% { color: #ff00ff; }
+        }
+        .animated-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: rgba(255, 255, 255, 0.5);
+            animation: backgroundAnimation 10s infinite alternate, colorChange 5s infinite;
+        }
+        @keyframes backgroundAnimation {
+            0% { background: rgba(255, 255, 255, 0.5); }
+            100% { background: rgba(0, 0, 0, 0.5); }
+        }
+        .shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: float 6s infinite, bounce 1s infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-50vh); }
+            100% { transform: translateY(0); }
+        }
+        .soundEffect {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 2;
+            font-size: 4em;
+            color: #ff0000;
+            animation: soundFlash 1s infinite;
+        }
+        @keyframes soundFlash {
+            0%, 100% { color: #ff0000; }
+            50% { color: #00ff00; }
+        }
+    </style>
+</head>
+<body>
+    <video class="video-bg" autoplay loop muted>
+        <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="animated-bg"></div>
+    <div class="container">
+        <h1>Are you Sigma?</h1>
+        <button id="checkButton">Find Out!</button>
+        <div id="response" class="hidden"></div>
+        <div id="coolEffects" class="cool-effects hidden">
+            <span id="effect1" class="hidden">💥 BAM! Sigma Unleashed! 💥</span>
+            <span id="effect2" class="hidden">🎉 PARTY TIME! 🎉</span>
+            <span id="effect3" class="hidden">🚀 WOOHOO! TO THE STARS! 🚀</span>
+        </div>
+        <div class="soundEffect" id="soundEffect">🔊</div>
+    </div>
+    <audio id="sigmaSound" src="https://www.soundjay.com/button/beep-07.wav" preload="auto"></audio>
+
+    <script>
+        document.getElementById('checkButton').addEventListener('click', function() {
+            const responseElement = document.getElementById('response');
+            const coolEffectsElement = document.getElementById('coolEffects');
+            const effects = ['effect1', 'effect2', 'effect3'];
+            const sigmaSound = document.getElementById('sigmaSound');
+            const soundEffectElement = document.getElementById('soundEffect');
+
+            // Ask the user if they are sigma
+            const isSigma = confirm('Are you Sigma?');
+
+            if (isSigma) {
+                // Play sound effect
+                sigmaSound.play();
+                soundEffectElement.style.display = 'block';
+
+                // Display cool effects
+                responseElement.classList.add('hidden');
+                coolEffectsElement.classList.remove('hidden');
+                
+                // Make the effects appear one by one
+                effects.forEach((id, index) => {
+                    setTimeout(() => {
+                        const effect = document.getElementById(id);
+                        effect.classList.remove('hidden');
+                        effect.style.transform = `scale(${Math.random() * 3 + 1}) rotate(${Math.random() * 360}deg)`;
+                        effect.style.color = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                        effect.style.fontSize = `${Math.random() * 2 + 2}em`;
+                    }, index * 1000); // Show each effect with a delay
+                });
+
+                // Pop-up alerts for added cringe
+                setTimeout(() => alert('Congratulations! You are Sigma! 🎉'), 2000);
+                setTimeout(() => alert('Prepare for more randomness! 🤪'), 4000);
+                setTimeout(() => alert('Don’t stop the fun! 🕺💃'), 6000);
+            } else {
+                responseElement.textContent = 'No worries! You can still be awesome.';
+                responseElement.classList.remove('hidden');
+                coolEffectsElement.classList.add('hidden');
+                soundEffectElement.style.display = 'none';
+            }
+        });
+
+        // Create random shapes
+        function createShape() {
+            const shape = document.createElement('div');
+            shape.classList.add('shape');
+            shape.style.width = `${Math.random() * 150 + 50}px`;
+            shape.style.height = shape.style.width;
+            shape.style.top = `${Math.random() * 100}vh`;
+            shape.style.left = `${Math.random() * 100}vw`;
+            shape.style.background = `hsl(${Math.random() * 360}, 100%, 75%)`;
+            shape.style.animationDuration = `${Math.random() * 5 + 5}s`;
+            document.body.appendChild(shape);
+
+            setTimeout(() => shape.remove(), 10000); // Remove shape after 10 seconds
+        }
+        setInterval(createShape, 300); // Create shapes every 0.3 seconds
+
+        // Randomly trigger absurd sound effects
+        function playRandomSound() {
+            const sounds = [
+                'https://www.soundjay.com/button/beep-07.wav',
+                'https://www.soundjay.com/button/beep-08.wav',
+                'https://www.soundjay.com/button/beep-09.wav'
+            ];
+            const randomSound = sounds[Math.floor(Math.random() * sounds.length)];
+            const audio = new Audio(randomSound);
+            audio.play();
+        }
+        setInterval(playRandomSound, 3000); // Play random sound every 3 seconds
+    </script>
+</body>
+</html>
