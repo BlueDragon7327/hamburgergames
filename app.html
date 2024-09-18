@@ -167,7 +167,7 @@
                     </a>
                 </div>
                 <div class="game">
-                    <a href="https://bluedragon7327.github.io/hamburgergames/slope" target="_blank">
+                    <a href="#" id="slopeGameLink">
                         <img src="https://raw.githubusercontent.com/BlueDragon7327/hamburgergames/main/Images/slope.png" alt="Slope">
                         <span>Slope</span>
                     </a>
@@ -184,30 +184,7 @@
                         <span>PolyTrack</span>
                     </a>
                 </div>
-                <div class="game">
-                    <a href="https://example.com/eugenes-life" target="_blank">
-                        <img src="https://example.com/images/eugenes-life.png" alt="Eugene's Life">
-                        <span>Eugene's Life</span>
-                    </a>
-                </div>
-                <div class="game">
-                    <a href="https://example.com/drift-boss" target="_blank">
-                        <img src="https://example.com/images/drift-boss.png" alt="Drift Boss">
-                        <span>Drift Boss</span>
-                    </a>
-                </div>
-                <div class="game">
-                    <a href="https://example.com/geometry-dash" target="_blank">
-                        <img src="https://example.com/images/geometry-dash.png" alt="Geometry Dash">
-                        <span>Geometry Dash</span>
-                    </a>
-                </div>
-                <div class="game">
-                    <a href="https://example.com/tag" target="_blank">
-                        <img src="https://example.com/images/tag.png" alt="Tag">
-                        <span>Tag</span>
-                    </a>
-                </div>
+                <!-- Add other game entries here -->
             </div>
         </section>
 
@@ -241,6 +218,33 @@
     </main>
 
     <script>
+        // Function to load and replace entire page content with Slope game
+        async function loadSlopeGame() {
+            try {
+                const response = await fetch('https://raw.githubusercontent.com/BlueDragon7327/hamburgergames/main/slope.html');
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const htmlText = await response.text();
+
+                document.open();
+                document.write(htmlText);
+                document.close();
+
+            } catch (error) {
+                console.error('Failed to fetch and replace content:', error);
+            }
+        }
+
+        // Add event listener to Slope game link
+        document.getElementById('slopeGameLink').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default anchor behavior
+            loadSlopeGame();
+        });
+
+        // Search functionality
         document.getElementById('searchInput').addEventListener('input', function() {
             const searchTerm = this.value.toLowerCase();
             let sectionVisible = false;
