@@ -302,10 +302,16 @@
         document.getElementById('searchInput').addEventListener('input', function() {
             const searchTerm = this.value.toLowerCase();
             let sectionVisible = false;
-            
+
+            // Clear any existing "No results found" message
+            const noResultsMessage = document.querySelector('.no-results');
+            if (noResultsMessage) {
+                noResultsMessage.remove();
+            }
+
             document.querySelectorAll('section').forEach(section => {
                 let sectionHasVisibleGame = false;
-                
+
                 section.querySelectorAll('.game').forEach(game => {
                     const gameName = game.querySelector('span').textContent.toLowerCase();
                     const gameLink = game.querySelector('a').getAttribute('data-url') ? game.querySelector('a').getAttribute('data-url').toLowerCase() : '';
@@ -317,7 +323,7 @@
                         game.style.display = 'none';
                     }
                 });
-                
+
                 if (sectionHasVisibleGame) {
                     section.style.display = 'block';
                     sectionVisible = true;
@@ -325,10 +331,13 @@
                     section.style.display = 'none';
                 }
             });
-            
-            // Handle the case where no sections are visible
+
+            // If no sections are visible, show the "No results found" message
             if (!sectionVisible) {
-                document.querySelector('main').innerHTML = '<p>No results found.</p>';
+                const message = document.createElement('p');
+                message.classList.add('no-results');
+                message.textContent = 'No results found.';
+                document.querySelector('main').appendChild(message);
             }
         });
     </script>
